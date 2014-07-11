@@ -1,7 +1,9 @@
 <?php
 
-$url = base64_decode($_GET['url']);
+//$url = base64_decode($_GET['url']);
 //echo file_get_contents($url);
+
+$url = $_GET['url'];
 
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_URL, $url); 
