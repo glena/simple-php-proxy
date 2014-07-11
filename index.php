@@ -25,7 +25,9 @@ curl_close($curl);
 
 $header = '';
 
-for ($a = 0; $a <= count($data); $a++)
+echo "LEN " . strlen($data) . "\n";
+
+for ($a = 0; $a <= strlen($data); $a++)
 {
 	if ($data[$a] == "\n" && $data[$a+1] == "\r" && $data == '')
 	{
