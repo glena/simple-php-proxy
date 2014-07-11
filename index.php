@@ -20,6 +20,7 @@ $error = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 curl_close($curl);
 
 $header = '';
+$headers = array();
 
 for ($a = 0; $a <= strlen($data); $a++)
 {
@@ -30,7 +31,8 @@ for ($a = 0; $a <= strlen($data); $a++)
 	}
 	elseif ($data[$a] == "\r" && $data[$a+1] == "\n")
 	{
-		header($header);
+		header($header, true);
+		$headers[] = $header;
 		$header = '';
 		$a++;
 	}
@@ -42,6 +44,8 @@ for ($a = 0; $a <= strlen($data); $a++)
 
 $data = substr($data,$a);
 
-echo $data;
+//echo $data;
+
+var_dump($headers);
 
 ?>
