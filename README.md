@@ -37,5 +37,5 @@ heroku open
 Next steps
 ----------
 
-[ ] Proxy support
-[ ] Base64 url encode support
+* Proxy support
+* Base64 url encode support
