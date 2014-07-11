@@ -27,17 +27,17 @@ $header = '';
 
 for ($a = 0; $a <= strlen($data); $a++)
 {
-	var_dump($data[$a], $data[$a] == "\r" , $data[$a+1], $data[$a+1] == "\n" , $data, $data == '');
+	var_dump($data[$a], $data[$a] == "\r" , $data[$a+1], $data[$a+1] == "\n" , $header, $header == '');
 
-	if ($data[$a] == "\r" && $data[$a+1] == "\n" && $data == '')
+	if ($data[$a] == "\r" && $data[$a+1] == "\n" && $header == '')
 	{
 		$a++;
 		break;
 	}
 	elseif ($data[$a] == "\r" && $data[$a+1] == "\n")
 	{
-		echo "HEADER: $header\n";
-		var_dump($data);
+		//echo "HEADER: $header\n";
+		//var_dump($data);
 		//header($header);
 		$header = '';
 		$a++;
