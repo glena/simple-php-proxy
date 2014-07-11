@@ -1,5 +1,14 @@
 <?php
 
+if (!isset($_GET['url']))
+{
+	echo "<pre>
+			Usage: \n";
+	echo $_SERVER['HTTP_HOST'] . "?url=<b>http://thewebsiteyouwanttoscrap.com/allthepathtothepage.html";
+	echo "</pre>"
+	exit;
+}
+
 $url = $_GET['url'];
 
 $curl = curl_init();
