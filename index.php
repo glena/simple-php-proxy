@@ -29,12 +29,12 @@ echo "LEN " . strlen($data) . "\n";
 
 for ($a = 0; $a <= strlen($data); $a++)
 {
-	if ($data[$a] == "\n" && $data[$a+1] == "\r" && $data == '')
+	if ($data[$a] == "\r" && $data[$a+1] == "\n" && $data == '')
 	{
 		$a++;
 		break;
 	}
-	elseif ($data[$a] == "\n" && $data[$a+1] == "\r")
+	elseif ($data[$a] == "\r" && $data[$a+1] == "\n")
 	{
 		echo "HEADER: $header\n";
 		//header($header);
