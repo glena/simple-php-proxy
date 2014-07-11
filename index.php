@@ -1,8 +1,4 @@
-<pre>
 <?php
-
-//$url = base64_decode($_GET['url']);
-//echo file_get_contents($url);
 
 $url = $_GET['url'];
 
@@ -27,8 +23,6 @@ $header = '';
 
 for ($a = 0; $a <= strlen($data); $a++)
 {
-	var_dump($data[$a], $data[$a] == "\r" , $data[$a+1], $data[$a+1] == "\n" , $header, $header == '');
-
 	if ($data[$a] == "\r" && $data[$a+1] == "\n" && $header == '')
 	{
 		$a++;
@@ -36,9 +30,7 @@ for ($a = 0; $a <= strlen($data); $a++)
 	}
 	elseif ($data[$a] == "\r" && $data[$a+1] == "\n")
 	{
-		//echo "HEADER: $header\n";
-		//var_dump($data);
-		//header($header);
+		header($header);
 		$header = '';
 		$a++;
 	}
@@ -47,11 +39,9 @@ for ($a = 0; $a <= strlen($data); $a++)
 		$header .= $data[$a];
 	}
 }
-echo "DATA:\n";
 
 $data = substr($data,$a);
 
-//echo $data;
-echo substr($data, 0, 30);
+echo $data;
 
 ?>
