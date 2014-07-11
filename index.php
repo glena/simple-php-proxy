@@ -2,10 +2,9 @@
 
 if (!isset($_GET['url']))
 {
-	echo "<pre>
-			Usage: \n";
-	echo $_SERVER['HTTP_HOST'] . "?url=<b>http://thewebsiteyouwanttoscrap.com/allthepathtothepage.html";
-	echo "</pre>"
+	echo "<pre>Usage: \n";
+	echo "http://".$_SERVER['HTTP_HOST'] . "?url=<b>http://thewebsiteyouwanttoscrap.com/allthepathtothepage.html</b>";
+	echo "</pre>";
 	exit;
 }
 
