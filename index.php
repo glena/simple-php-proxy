@@ -22,7 +22,26 @@ $error = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
 curl_close($curl);
 
-echo $data;
-exit;
+$header = '';
+
+for ($a = 0; $a <= count($data); $a++)
+{
+	if ($data[$a] == "\n" && $data[$a+1] == "\r" && $data == '')
+	{
+		$a++;
+		break;
+	}
+	elseif ($data[$a] == "\n" && $data[$a+1] == "\r")
+	{
+		header($header);
+		$header = '';
+		$a++;
+	}
+	else
+	{
+		$header .= $data[$a];
+	}
+}
+echo $data[$a];
 
 ?>
