@@ -1,3 +1,4 @@
+<pre>
 <?php
 
 //$url = base64_decode($_GET['url']);
@@ -33,7 +34,8 @@ for ($a = 0; $a <= count($data); $a++)
 	}
 	elseif ($data[$a] == "\n" && $data[$a+1] == "\r")
 	{
-		header($header);
+		echo "HEADER: $header\n";
+		//header($header);
 		$header = '';
 		$a++;
 	}
@@ -42,6 +44,7 @@ for ($a = 0; $a <= count($data); $a++)
 		$header .= $data[$a];
 	}
 }
+echo "DATA:\n";
 echo $data[$a];
 
 ?>
