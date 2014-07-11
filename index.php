@@ -27,7 +27,7 @@ $header = '';
 
 for ($a = 0; $a <= strlen($data); $a++)
 {
-	var_dump($data[$a] == "\r" , $data[$a+1] == "\n" , $data == '');
+	var_dump($data[$a], $data[$a] == "\r" , $data[$a+1], $data[$a+1] == "\n" , $data, $data == '');
 
 	if ($data[$a] == "\r" && $data[$a+1] == "\n" && $data == '')
 	{
@@ -48,6 +48,10 @@ for ($a = 0; $a <= strlen($data); $a++)
 	}
 }
 echo "DATA:\n";
-echo $data[$a];
+
+$data = substr($data,$a);
+
+//echo $data;
+echo substr($data, 0, 30);
 
 ?>
