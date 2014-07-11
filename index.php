@@ -25,10 +25,10 @@ curl_close($curl);
 
 $header = '';
 
-echo "LEN " . strlen($data) . "\n";
-
 for ($a = 0; $a <= strlen($data); $a++)
 {
+	var_dump($data[$a] == "\r" , $data[$a+1] == "\n" , $data == '');
+
 	if ($data[$a] == "\r" && $data[$a+1] == "\n" && $data == '')
 	{
 		$a++;
@@ -37,6 +37,7 @@ for ($a = 0; $a <= strlen($data); $a++)
 	elseif ($data[$a] == "\r" && $data[$a+1] == "\n")
 	{
 		echo "HEADER: $header\n";
+		var_dump($data);
 		//header($header);
 		$header = '';
 		$a++;
