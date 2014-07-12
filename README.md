@@ -40,4 +40,4 @@ Next steps
 * Proxy support
 * Base64 url encode support
 
-[![Analytics](https://ga-beacon.appspot.com/UA-51467836-1/glena/simple-php-proxy](https://github.com/glena/glena.github.io)
+[!Analytics](https://ga-beacon.appspot.com/UA-51467836-1/glena/simple-php-proxy](https://github.com/glena/glena.github.io)
